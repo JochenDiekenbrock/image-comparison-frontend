@@ -4,7 +4,7 @@
     "jsRules": {},
     "rules": {
         "interface-name": [true, "never-prefix"],
-        "quotemark": [true, "double"],
+        "quotemark": [true, "single"],
         "no-console": [false],
         "one-line": [true, "check-open-brace", "check-whitespace"],
         "object-literal-sort-keys": [false],
