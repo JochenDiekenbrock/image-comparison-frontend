@@ -26,10 +26,11 @@
         "protractor-image-comparison": "1.7.2"
     },
     "scripts": {
-        "format": "prettier --write **/*.ts **/*.json",
-        "webdriver-update": "node_modules/.bin/webdriver-manager update",
-        "run-example": "tsc && protractor dist/example/conf.js",
+        "format": "prettier --write './**/*.ts' '**/*.json'",
         "lint": "tslint --project .",
-        "postinstall": "npm run webdriver-update"
+        "postinstall": "npm run webdriver-update",
+        "run-example": "tsc && protractor dist/example/conf.js",
+        "version": "conventional-changelog -i CHANGELOG.md -s && git add CHANGELOG.md",
+        "webdriver-update": "node_modules/.bin/webdriver-manager update"
     }
 }

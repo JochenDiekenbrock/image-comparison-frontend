@@ -19,9 +19,17 @@ export class ImageComparison {
         return this.checkElement(element(by.css('body')), testName, protractorImageComparisonOptions);
     }
 
-    async checkElement(elementFinder: ElementFinder, testName: string, protractorImageComparisonOptions?: any): Promise<void> {
+    async checkElement(
+        elementFinder: ElementFinder,
+        testName: string,
+        protractorImageComparisonOptions?: any
+    ): Promise<void> {
         const saveAboveTolerance: number = this._pic.saveAboveTolerance;
-        const mismatch: number = await this._pic.checkElement(elementFinder, testName, protractorImageComparisonOptions);
+        const mismatch: number = await this._pic.checkElement(
+            elementFinder,
+            testName,
+            protractorImageComparisonOptions
+        );
         const success = mismatch >= saveAboveTolerance;
         const paths: ProtractorImageComparisonPaths = this._pic._determineImageComparisonPaths(testName);
         if (success) {

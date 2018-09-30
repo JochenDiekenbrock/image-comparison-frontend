@@ -8,8 +8,7 @@ export const config: Config = {
         browser.protractorImageComparison = new protractorImageComparison({
             autoSaveBaseline: true,
             baselineFolder: 'dist/example/baseline/',
-            screenshotPath: 'dist/example/',
-
+            screenshotPath: 'dist/example/'
         });
     }
 };
