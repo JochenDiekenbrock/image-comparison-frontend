@@ -30,12 +30,12 @@ export class ImageComparison {
             testName,
             protractorImageComparisonOptions
         );
-        const success = mismatch >= saveAboveTolerance;
+        const success = mismatch <= saveAboveTolerance;
         const paths: ProtractorImageComparisonPaths = this._pic._determineImageComparisonPaths(testName);
         if (success) {
             paths.imageDiffPath = undefined;
         }
-        this._reporter.report({
+        await this._reporter.report({
             ...paths,
             success,
             date: new Date(),
