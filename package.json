@@ -13,9 +13,13 @@
     ],
     "author": "Jochen Diekenbrock",
     "license": "GPL-3.0-or-later",
+    "engines": {
+        "node": ">=10"
+    },
     "devDependencies": {
         "@types/jasminewd2": "^2.0.3",
         "@types/protractor": "^4.0.0",
+        "@types/node": "^10.11.3",
         "conventional-changelog-cli": "^2.0.5",
         "jasmine": "^3.2.0",
         "prettier": "^1.14.3",
