@@ -31,7 +31,8 @@
         "protractor-image-comparison": "1.7.2"
     },
     "scripts": {
-        "format": "prettier --write './**/*.ts' '**/*.json'",
+        "build": "tsc",
+        "format": "prettier --write '**/*.ts' '**/*.json'",
         "lint": "tslint --project .",
         "postinstall": "npm run webdriver-update",
         "run-example": "tsc && protractor dist/example/conf.js",

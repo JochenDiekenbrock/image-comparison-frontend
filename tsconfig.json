@@ -5,9 +5,9 @@
         "noImplicitAny": true,
         "outDir": "./dist",
         "sourceMap": true,
-        "rootDir": "./",
+        "rootDir": "./src",
         "declaration": true
     },
-    "include": ["src/**/*", "example/**/*"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules"]
 }
