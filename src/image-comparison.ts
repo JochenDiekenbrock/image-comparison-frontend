@@ -1,41 +1,37 @@
-import { Config } from './config';
 import { browser, by, element, ElementFinder } from 'protractor';
-import { ResultReporter } from './result-reporter';
+
+import { Config } from './config';
 import { ProtractorImageComparisonPaths } from './protractor-image-comparison-paths';
+import { ResultReporter } from './result-reporter';
 
 export class ImageComparison {
+    private readonly config: Partial<Config>;
+    private pic = browser.protractorImageComparison;
+    private reporter: ResultReporter;
+
     constructor(config?: Partial<Config>) {
         config = config || {};
-        this._config = { reportPath: config.reportPath || this._pic.baseFolder };
-        // console.log('config', this._config);
-        this._reporter = new ResultReporter(this._config);
+        this.config = { reportPath: config.reportPath || this.pic.baseFolder };
+        this.reporter = new ResultReporter(this.config);
     }
-
-    private _config: Partial<Config>;
-    private _pic = browser.protractorImageComparison;
-    private _reporter: ResultReporter;
 
     public checkScreen(testName: string, protractorImageComparisonOptions?: any): Promise<void> {
         return this.checkElement(element(by.css('body')), testName, protractorImageComparisonOptions);
     }
 
-    async checkElement(
+    public async checkElement(
         elementFinder: ElementFinder,
         testName: string,
         protractorImageComparisonOptions?: any
     ): Promise<void> {
-        const saveAboveTolerance: number = this._pic.saveAboveTolerance;
-        const mismatch: number = await this._pic.checkElement(
-            elementFinder,
-            testName,
-            protractorImageComparisonOptions
-        );
+        const saveAboveTolerance: number = this.pic.saveAboveTolerance;
+        const mismatch: number = await this.pic.checkElement(elementFinder, testName, protractorImageComparisonOptions);
         const success = mismatch <= saveAboveTolerance;
-        const paths: ProtractorImageComparisonPaths = this._pic._determineImageComparisonPaths(testName);
+        const paths: ProtractorImageComparisonPaths = this.pic._determineImageComparisonPaths(testName);
         if (success) {
             paths.imageDiffPath = undefined;
         }
-        await this._reporter.report({
+        await this.reporter.report({
             ...paths,
             success,
             date: new Date(),
