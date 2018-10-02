@@ -19,7 +19,7 @@ export class ResultReporter {
 
     public async report(result: Result): Promise<void> {
         await fs.promises.writeFile(
-            path.join(this.config.reportPath, `${result.testName}.json`),
+            path.join(this.config.reportPath, `${result.testFileName}.test-result.json`),
             JSON.stringify(result, undefined, 4),
             'utf8'
         );

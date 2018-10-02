@@ -9,6 +9,9 @@ export interface Result {
 
     testName: string;
 
+    /* the testname as it is used to create image/testresult filenames */
+    testFileName: string;
+
     /* if the test encountered a difference between baselintImage and actualImage, this image highlights the
        differences. Path is relativ to the current directory
        */

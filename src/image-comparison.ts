@@ -1,3 +1,4 @@
+import * as dashify from 'dashify';
 import { browser, by, element, ElementFinder } from 'protractor';
 
 import { Config } from './config';
@@ -25,9 +26,14 @@ export class ImageComparison {
         protractorImageComparisonOptions?: any
     ): Promise<void> {
         const saveAboveTolerance: number = this.pic.saveAboveTolerance;
-        const mismatch: number = await this.pic.checkElement(elementFinder, testName, protractorImageComparisonOptions);
+        const testFileName = dashify(testName);
+        const mismatch: number = await this.pic.checkElement(
+            elementFinder,
+            testFileName,
+            protractorImageComparisonOptions
+        );
         const success = mismatch <= saveAboveTolerance;
-        const paths: ProtractorImageComparisonPaths = this.pic._determineImageComparisonPaths(testName);
+        const paths: ProtractorImageComparisonPaths = this.pic._determineImageComparisonPaths(testFileName);
         if (success) {
             paths.imageDiffPath = undefined;
         }
@@ -35,7 +41,8 @@ export class ImageComparison {
             ...paths,
             success,
             date: new Date(),
-            testName
+            testName,
+            testFileName
         });
 
         if (!success) {

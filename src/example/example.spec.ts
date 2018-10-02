@@ -12,6 +12,6 @@ describe('angularjs homepage todo list', () => {
         element(by.model('todoList.todoText')).sendKeys('write first protractor test');
         element(by.css('[value="add"]')).click();
 
-        await imageComparison.checkElement(element(by.model('todoList.todoText')), 'anElement');
+        await imageComparison.checkElement(element(by.model('todoList.todoText')), 'anElement after adding');
     });
 });
