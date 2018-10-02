@@ -7,10 +7,10 @@ describe('angularjs homepage todo list', () => {
         browser.get('https://angularjs.org');
 
         const imageComparison = new ImageComparison();
-        await imageComparison.checkScreen('startPage');
+        await imageComparison.checkPage('startPage');
 
         element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-        // element(by.css('[value="add"]')).click();
+        element(by.css('[value="add"]')).click();
 
         await imageComparison.checkElement(element(by.model('todoList.todoText')), 'anElement');
     });

@@ -15,7 +15,7 @@ export class ImageComparison {
         this.reporter = new ResultReporter(this.config);
     }
 
-    public checkScreen(testName: string, protractorImageComparisonOptions?: any): Promise<void> {
+    public checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<void> {
         return this.checkElement(element(by.css('body')), testName, protractorImageComparisonOptions);
     }
 
