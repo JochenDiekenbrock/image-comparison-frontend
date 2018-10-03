@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { Config } from './config';
-import { TestResult } from './test-result';
+import { TEST_RESULT_EXTENSION, TestResult } from './test-result';
 
 export class ResultReporter {
     private config: Partial<Config> = {};
@@ -19,7 +19,7 @@ export class ResultReporter {
 
     public async report(result: TestResult): Promise<void> {
         const testResultFile = path.normalize(
-            path.join(this.config.reportPath, `${result.testFileName}.test-result.json`)
+            path.join(this.config.reportPath, `${result.testFileName}${TEST_RESULT_EXTENSION}`)
         );
         result = {
             ...result,
