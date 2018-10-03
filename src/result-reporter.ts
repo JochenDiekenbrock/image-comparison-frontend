@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { Config } from './config';
-import { Result } from './result';
+import { TestResult } from './test-result';
 
 export class ResultReporter {
     private config: Partial<Config> = {};
@@ -17,11 +17,28 @@ export class ResultReporter {
         }
     }
 
-    public async report(result: Result): Promise<void> {
-        await fs.promises.writeFile(
-            path.join(this.config.reportPath, `${result.testFileName}.test-result.json`),
-            JSON.stringify(result, undefined, 4),
-            'utf8'
+    public async report(result: TestResult): Promise<void> {
+        const testResultFile = path.normalize(
+            path.join(this.config.reportPath, `${result.testFileName}.test-result.json`)
         );
+        result = {
+            ...result,
+            actualImage: this.toTestResultRelativeFile(testResultFile, result.actualImage),
+            baselineImage: this.toTestResultRelativeFile(testResultFile, result.baselineImage),
+            diffImage: this.toTestResultRelativeFile(testResultFile, result.diffImage)
+        };
+        await fs.promises.writeFile(testResultFile, JSON.stringify(result, undefined, 4), 'utf8');
+    }
+
+    private toTestResultRelativeFile(testResultFileName: string, fileName: string): string {
+        if (!fileName) {
+            return undefined;
+        }
+
+        /*
+            path.relative returns ../actual/start-page-chrome-1050x880-dpr-1.png instead of
+            ./actual/start-page-chrome-1050x880-dpr-1.png
+        */
+        return path.relative(testResultFileName, path.normalize(fileName)).substring(1);
     }
 }

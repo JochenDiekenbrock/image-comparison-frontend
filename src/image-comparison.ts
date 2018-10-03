@@ -38,7 +38,9 @@ export class ImageComparison {
             paths.imageDiffPath = undefined;
         }
         await this.reporter.report({
-            ...paths,
+            baselineImage: paths.baselineImage,
+            actualImage: paths.actualImage,
+            diffImage: paths.imageDiffPath,
             success,
             date: new Date(),
             testName,
