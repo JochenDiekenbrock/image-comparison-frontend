@@ -1,3 +1,11 @@
+## <small>1.0.2 (2018-10-03)</small>
+
+* add checklist, how to release ([3674d00](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/3674d00))
+* protractor is runtime dependency ([b0f896f](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/b0f896f))
+* remove @types/protractor, it's included in protractor ([bea2067](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/bea2067))
+
+
+
 ## <small>1.0.1 (2018-10-03)</small>
 
 * build before versioning and push dist ([1dfdc90](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/1dfdc90))
