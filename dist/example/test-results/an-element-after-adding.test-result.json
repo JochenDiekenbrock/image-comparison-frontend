@@ -1,0 +1,8 @@
+{
+    "baselineImage": "./baseline/an-element-after-adding-chrome-1050x880-dpr-1.png",
+    "actualImage": "./actual/an-element-after-adding-chrome-1050x880-dpr-1.png",
+    "success": true,
+    "date": "2018-10-03T20:40:48.062Z",
+    "testName": "anElement after adding",
+    "testFileName": "an-element-after-adding"
+}
