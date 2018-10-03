@@ -21,7 +21,6 @@
         "@types/dashify": "^1.0.0",
         "@types/jasminewd2": "^2.0.4",
         "@types/node": "^10.11.3",
-        "@types/protractor": "^4.0.0",
         "conventional-changelog-cli": "^2.0.5",
         "jasmine": "^3.2.0",
         "prettier": "^1.14.3",
