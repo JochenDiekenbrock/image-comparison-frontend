@@ -36,9 +36,10 @@
         "build": "tsc",
         "format": "prettier --write '**/*.ts' '**/*.json'",
         "lint": "tslint --project .",
-        "postinstall": "npm run webdriver-update",
         "run-example": "tsc && protractor dist/example/conf.js",
+        "preversion": "npm run build  && git add -A dist",
         "version": "conventional-changelog -i CHANGELOG.md -s && git add CHANGELOG.md",
+        "postversion": "git push && git push --tags",
         "webdriver-update": "node_modules/.bin/webdriver-manager update"
     }
 }
