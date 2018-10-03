@@ -3,6 +3,7 @@
     "version": "1.0.1",
     "description": "Frontend of an image comparison solution. Performs image comparisons during end to end tests and writes test results",
     "main": "index.js",
+    "types": "./dist/index.d.ts",
     "repository": "https://github.com/JochenDiekenbrock/image-comparison-frontend.git",
     "keywords": [
         "ci",
@@ -24,12 +25,12 @@
         "conventional-changelog-cli": "^2.0.5",
         "jasmine": "^3.2.0",
         "prettier": "^1.14.3",
-        "protractor": "^5.4.1",
         "tslint": "^5.11.0",
         "typescript": "^3.1.1"
     },
     "dependencies": {
         "dashify": "^1.0.0",
+        "protractor": "^5.4.1",
         "protractor-image-comparison": "1.7.2"
     },
     "scripts": {
