@@ -1,3 +1,9 @@
+## <small>1.0.1 (2018-10-03)</small>
+
+* build before versioning and push dist ([1dfdc90](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/1dfdc90))
+
+
+
 ## 1.0.0 (2018-10-03)
 
 * add conventional-changelog-cli ([cf1f16d](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/cf1f16d))

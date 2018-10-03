@@ -1,6 +1,6 @@
 {
     "name": "image-comparison-frontend",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Frontend of an image comparison solution. Performs image comparisons during end to end tests and writes test results",
     "main": "index.js",
     "repository": "https://github.com/JochenDiekenbrock/image-comparison-frontend.git",

@@ -1,0 +1,10 @@
+import { ElementFinder } from 'protractor';
+import { Config } from './config';
+export declare class ImageComparison {
+    private readonly config;
+    private pic;
+    private reporter;
+    constructor(config?: Partial<Config>);
+    checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<void>;
+    checkElement(elementFinder: ElementFinder, testName: string, protractorImageComparisonOptions?: any): Promise<void>;
+}
