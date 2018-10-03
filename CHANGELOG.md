@@ -1,3 +1,10 @@
+## <small>1.0.3 (2018-10-03)</small>
+
+* add example data ([c0b0104](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/c0b0104))
+* fix main reference ([fa73761](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/fa73761))
+
+
+
 ## <small>1.0.2 (2018-10-03)</small>
 
 * add checklist, how to release ([3674d00](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/3674d00))
