@@ -17,7 +17,7 @@ export class ResultReporter {
         }
     }
 
-    public async report(result: TestResult): Promise<void> {
+    public report(result: TestResult): void {
         const testResultFile = path.normalize(
             path.join(this.config.reportPath, `${result.testFileName}${TEST_RESULT_EXTENSION}`)
         );
@@ -27,7 +27,7 @@ export class ResultReporter {
             baselineImage: this.toTestResultRelativeFile(testResultFile, result.baselineImage),
             diffImage: this.toTestResultRelativeFile(testResultFile, result.diffImage)
         };
-        await fs.promises.writeFile(testResultFile, JSON.stringify(result, undefined, 4), 'utf8');
+        fs.writeFileSync(testResultFile, JSON.stringify(result, undefined, 4), 'utf8');
     }
 
     private toTestResultRelativeFile(testResultFileName: string, fileName: string): string {

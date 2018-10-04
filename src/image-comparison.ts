@@ -37,7 +37,7 @@ export class ImageComparison {
         if (success) {
             paths.imageDiffPath = undefined;
         }
-        await this.reporter.report({
+        this.reporter.report({
             baselineImage: paths.baselineImage,
             actualImage: paths.actualImage,
             diffImage: paths.imageDiffPath,

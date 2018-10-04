@@ -14,9 +14,6 @@
     ],
     "author": "Jochen Diekenbrock",
     "license": "GPL-3.0-or-later",
-    "engines": {
-        "node": ">=10"
-    },
     "devDependencies": {
         "@types/dashify": "^1.0.0",
         "@types/jasminewd2": "^2.0.4",
