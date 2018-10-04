@@ -1,3 +1,9 @@
+## 1.1.0 (2018-10-04)
+
+* don't use fs.promises to support Node < 10 ([848b909](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/848b909))
+
+
+
 ## <small>1.0.3 (2018-10-03)</small>
 
 * add example data ([c0b0104](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/c0b0104))

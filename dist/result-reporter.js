@@ -15,10 +15,10 @@ class ResultReporter {
             // directory exists, ignore
         }
     }
-    async report(result) {
+    report(result) {
         const testResultFile = path.normalize(path.join(this.config.reportPath, `${result.testFileName}${test_result_1.TEST_RESULT_EXTENSION}`));
         result = Object.assign({}, result, { actualImage: this.toTestResultRelativeFile(testResultFile, result.actualImage), baselineImage: this.toTestResultRelativeFile(testResultFile, result.baselineImage), diffImage: this.toTestResultRelativeFile(testResultFile, result.diffImage) });
-        await fs.promises.writeFile(testResultFile, JSON.stringify(result, undefined, 4), 'utf8');
+        fs.writeFileSync(testResultFile, JSON.stringify(result, undefined, 4), 'utf8');
     }
     toTestResultRelativeFile(testResultFileName, fileName) {
         if (!fileName) {
