@@ -16,7 +16,7 @@ export class ImageComparison {
         this.reporter = new ResultReporter(this.config);
     }
 
-    public checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<void> {
+    public checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<number> {
         return this.checkElement(element(by.css('body')), testName, protractorImageComparisonOptions);
     }
 
@@ -24,7 +24,7 @@ export class ImageComparison {
         elementFinder: ElementFinder,
         testName: string,
         protractorImageComparisonOptions?: any
-    ): Promise<void> {
+    ): Promise<number> {
         const saveAboveTolerance: number = this.pic.saveAboveTolerance;
         const testFileName = dashify(testName);
         const mismatch: number = await this.pic.checkElement(
@@ -50,5 +50,7 @@ export class ImageComparison {
         if (!success) {
             fail('Test ' + testName + ' failed. The mismatch was ' + mismatch + ' percent');
         }
+
+        return mismatch;
     }
 }
