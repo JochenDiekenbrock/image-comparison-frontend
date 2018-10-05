@@ -5,6 +5,6 @@ export declare class ImageComparison {
     private pic;
     private reporter;
     constructor(config?: Partial<Config>);
-    checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<void>;
-    checkElement(elementFinder: ElementFinder, testName: string, protractorImageComparisonOptions?: any): Promise<void>;
+    checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<number>;
+    checkElement(elementFinder: ElementFinder, testName: string, protractorImageComparisonOptions?: any): Promise<number>;
 }

@@ -1,3 +1,9 @@
+## 1.2.0 (2018-10-05)
+
+* return the result of the protractor-image-comparison call ([606bbc9](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/606bbc9))
+
+
+
 ## 1.1.0 (2018-10-04)
 
 * don't use fs.promises to support Node < 10 ([848b909](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/848b909))

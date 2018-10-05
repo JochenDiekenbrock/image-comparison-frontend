@@ -34,6 +34,7 @@ class ImageComparison {
         if (!success) {
             fail('Test ' + testName + ' failed. The mismatch was ' + mismatch + ' percent');
         }
+        return mismatch;
     }
 }
 exports.ImageComparison = ImageComparison;
