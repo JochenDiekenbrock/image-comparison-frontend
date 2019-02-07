@@ -6,5 +6,10 @@ export declare class ImageComparison {
     private reporter;
     constructor(config?: Partial<Config>);
     checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<number>;
-    checkElement(elementFinder: ElementFinder, testName: string, protractorImageComparisonOptions?: any): Promise<number>;
+    checkElement(
+        elementFinder: ElementFinder,
+        testName: string,
+        protractorImageComparisonOptions?: {}
+    ): Promise<number>;
+    private check;
 }

@@ -11,12 +11,21 @@ class ImageComparison {
         this.reporter = new result_reporter_1.ResultReporter(this.config);
     }
     checkPage(testName, protractorImageComparisonOptions) {
-        return this.checkElement(protractor_1.element(protractor_1.by.css('body')), testName, protractorImageComparisonOptions);
+        return this.check(testName, true, protractorImageComparisonOptions);
     }
-    async checkElement(elementFinder, testName, protractorImageComparisonOptions) {
+    async checkElement(elementFinder, testName, protractorImageComparisonOptions = {}) {
+        return this.check(testName, false, protractorImageComparisonOptions, elementFinder);
+    }
+    async check(testName, isFullscreen, protractorImageComparisonOptions = {}, elementFinder) {
         const saveAboveTolerance = this.pic.saveAboveTolerance;
         const testFileName = dashify(testName);
-        const mismatch = await this.pic.checkElement(elementFinder, testFileName, protractorImageComparisonOptions);
+        let mismatch;
+        if (isFullscreen) {
+            mismatch = await this.pic.checkFullPageScreen(testFileName, protractorImageComparisonOptions);
+        }
+        else {
+            mismatch = await this.pic.checkElement(elementFinder, testFileName, protractorImageComparisonOptions);
+        }
         const success = mismatch <= saveAboveTolerance;
         const paths = this.pic._determineImageComparisonPaths(testFileName);
         if (success) {
