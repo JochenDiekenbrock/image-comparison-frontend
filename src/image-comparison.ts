@@ -1,9 +1,9 @@
 import * as dashify from 'dashify';
-import { browser, by, element, ElementFinder } from 'protractor';
+import {browser, ElementFinder} from 'protractor';
 
-import { Config } from './config';
-import { ProtractorImageComparisonPaths } from './protractor-image-comparison-paths';
-import { ResultReporter } from './result-reporter';
+import {Config} from './config';
+import {ProtractorImageComparisonPaths} from './protractor-image-comparison-paths';
+import {ResultReporter} from './result-reporter';
 
 export class ImageComparison {
     private readonly config: Partial<Config>;
@@ -12,26 +12,43 @@ export class ImageComparison {
 
     constructor(config?: Partial<Config>) {
         config = config || {};
-        this.config = { reportPath: config.reportPath || this.pic.baseFolder };
+        this.config = {reportPath: config.reportPath || this.pic.baseFolder};
         this.reporter = new ResultReporter(this.config);
     }
 
     public checkPage(testName: string, protractorImageComparisonOptions?: any): Promise<number> {
-        return this.checkElement(element(by.css('body')), testName, protractorImageComparisonOptions);
+        return this.check(testName, true, protractorImageComparisonOptions);
     }
 
     public async checkElement(
         elementFinder: ElementFinder,
         testName: string,
-        protractorImageComparisonOptions?: any
+        protractorImageComparisonOptions = {}
+    ): Promise<number> {
+        return this.check(testName, false, protractorImageComparisonOptions, elementFinder);
+    }
+
+    private async check(
+        testName: string,
+        isFullscreen: boolean,
+        protractorImageComparisonOptions = {},
+        elementFinder?: ElementFinder,
     ): Promise<number> {
         const saveAboveTolerance: number = this.pic.saveAboveTolerance;
         const testFileName = dashify(testName);
-        const mismatch: number = await this.pic.checkElement(
-            elementFinder,
-            testFileName,
-            protractorImageComparisonOptions
-        );
+        let mismatch: number;
+        if (isFullscreen) {
+            mismatch = await this.pic.checkFullPageScreen(
+                testFileName,
+                protractorImageComparisonOptions
+            );
+        } else {
+            mismatch = await this.pic.checkElement(
+                elementFinder,
+                testFileName,
+                protractorImageComparisonOptions
+            );
+        }
         const success = mismatch <= saveAboveTolerance;
         const paths: ProtractorImageComparisonPaths = this.pic._determineImageComparisonPaths(testFileName);
         if (success) {
