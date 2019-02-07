@@ -1,3 +1,11 @@
+## 2.0.0 (2019-02-07)
+
+* autoformat ([c12fca6](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/c12fca6))
+* update dependencies ([172529d](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/172529d))
+* checkPage: use checkFullPageScreen instead of checkElement with element element(by.css('body')) ([ee3dbfd](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/ee3dbfd))
+
+
+
 ## 1.2.0 (2018-10-05)
 
 * return the result of the protractor-image-comparison call ([606bbc9](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/606bbc9))
