@@ -7,4 +7,4 @@ export interface TestResult {
     baselineImage: string;
     diffImage?: string;
 }
-export declare const TEST_RESULT_EXTENSION = '.test-result.json';
+export declare const TEST_RESULT_EXTENSION = ".test-result.json";

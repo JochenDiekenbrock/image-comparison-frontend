@@ -21,12 +21,11 @@ class ImageComparison {
         const testFileName = dashify(testName);
         let compareResult;
         if (isFullscreen) {
-            compareResult = await this.pic.checkFullPageScreen(testFileName, protractorImageComparisonOptions);
+            compareResult = (await this.pic.checkFullPageScreen(testFileName, protractorImageComparisonOptions));
         }
         else {
-            compareResult = await this.pic.checkElement(elementFinder, testFileName, protractorImageComparisonOptions);
+            compareResult = (await this.pic.checkElement(elementFinder, testFileName, protractorImageComparisonOptions));
         }
-        console.log('Class: ImageComparison, Function: check, Line 48 compareResult(): ', compareResult);
         const success = compareResult.misMatchPercentage <= saveAboveTolerance;
         this.reporter.report({
             baselineImage: compareResult.folders.baseline,

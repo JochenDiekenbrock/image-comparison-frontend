@@ -1,3 +1,10 @@
+## 3.0.0 (2019-06-11)
+
+* typos ([136b1fc](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/136b1fc))
+* update protractor-image-comparison from version 1.7.2 to 3.2.0 ([0644651](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/0644651))
+
+
+
 ## 2.0.0 (2019-02-07)
 
 * autoformat ([c12fca6](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/c12fca6))
