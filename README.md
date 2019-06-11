@@ -10,14 +10,14 @@ or
 
 ## Configuration
 
-You can specify an ```reportPath``` (relative to the current directory) to define where to put the <testname>.test-result.json
+You can specify a ```reportPath``` (relative to the current directory) to define where to put the <testname>.test-result.json
 files.
 
 ImageComparison will use the protractor-image-comparison screenshotPath by default.  
 ResultReporter will use ```test-results``` in the current directory by default.
 
-### With protracor-image-comparison
-Configure [protracor-image-comparison](https://github.com/wswebcreation/protractor-image-comparison/).  
+### With protractor-image-comparison
+Configure [protractor-image-comparison](https://github.com/wswebcreation/protractor-image-comparison/).  
 In your test, create an ImageComparison instance ```const imageComparison = new ImageComparison({config...});```  
 and call a check function, for example ```await imageComparison.checkPage('startPage');```)                                               
 
@@ -39,7 +39,7 @@ checkElement(
 ): Promise<void>
 ```
 
-creates an image from the specified element and - if the base image already exists) comares it to the base image.
+creates an image from the specified element and - if the base image already exists) compares it to the base image.
 
 elementFinder: is any valid Protractor element finder, for example ```element(by.id('myElement'))```  
 testName: a unique name for your test, for example 'anElement after adding'  
@@ -63,8 +63,3 @@ testName: a unique name for your test, for example 'anElement after adding'
 returns a Promise resolving to void
 
 ## Notes
-protractor-image-comparison is set to version 1.7.2 until
-[Error: libpng12.so.0: cannot open shared object file: No such file or directory](https://github.com/wswebcreation/protractor-image-comparison/issues/68)
-is resolved.
-
-
