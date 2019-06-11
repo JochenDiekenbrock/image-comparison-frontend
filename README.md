@@ -18,6 +18,8 @@ ResultReporter will use ```test-results``` in the current directory by default.
 
 ### With protractor-image-comparison
 Configure [protractor-image-comparison](https://github.com/wswebcreation/protractor-image-comparison/).  
+**Note**: ```returnAllCompareData``` must be set to true!
+
 In your test, create an ImageComparison instance ```const imageComparison = new ImageComparison({config...});```  
 and call a check function, for example ```await imageComparison.checkPage('startPage');```)                                               
 
