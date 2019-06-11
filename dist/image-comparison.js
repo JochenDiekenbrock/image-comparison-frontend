@@ -5,9 +5,9 @@ const protractor_1 = require("protractor");
 const result_reporter_1 = require("./result-reporter");
 class ImageComparison {
     constructor(config) {
-        this.pic = protractor_1.browser.protractorImageComparison;
+        this.pic = protractor_1.browser.imageComparison;
         config = config || {};
-        this.config = { reportPath: config.reportPath || this.pic.baseFolder };
+        this.config = { reportPath: config.reportPath || this.pic.folders.baselineFolder };
         this.reporter = new result_reporter_1.ResultReporter(this.config);
     }
     checkPage(testName, protractorImageComparisonOptions) {
@@ -17,33 +17,30 @@ class ImageComparison {
         return this.check(testName, false, protractorImageComparisonOptions, elementFinder);
     }
     async check(testName, isFullscreen, protractorImageComparisonOptions = {}, elementFinder) {
-        const saveAboveTolerance = this.pic.saveAboveTolerance;
+        const saveAboveTolerance = this.pic.defaultOptions.compareOptions.saveAboveTolerance;
         const testFileName = dashify(testName);
-        let mismatch;
+        let compareResult;
         if (isFullscreen) {
-            mismatch = await this.pic.checkFullPageScreen(testFileName, protractorImageComparisonOptions);
+            compareResult = await this.pic.checkFullPageScreen(testFileName, protractorImageComparisonOptions);
         }
         else {
-            mismatch = await this.pic.checkElement(elementFinder, testFileName, protractorImageComparisonOptions);
+            compareResult = await this.pic.checkElement(elementFinder, testFileName, protractorImageComparisonOptions);
         }
-        const success = mismatch <= saveAboveTolerance;
-        const paths = this.pic._determineImageComparisonPaths(testFileName);
-        if (success) {
-            paths.imageDiffPath = undefined;
-        }
+        console.log('Class: ImageComparison, Function: check, Line 48 compareResult(): ', compareResult);
+        const success = compareResult.misMatchPercentage <= saveAboveTolerance;
         this.reporter.report({
-            baselineImage: paths.baselineImage,
-            actualImage: paths.actualImage,
-            diffImage: paths.imageDiffPath,
+            baselineImage: compareResult.folders.baseline,
+            actualImage: compareResult.folders.actual,
+            diffImage: compareResult.folders.diff,
             success,
             date: new Date(),
             testName,
             testFileName
         });
         if (!success) {
-            fail('Test ' + testName + ' failed. The mismatch was ' + mismatch + ' percent');
+            fail(`Test ${testName} failed. The mismatch was ${compareResult.misMatchPercentage} percent`);
         }
-        return mismatch;
+        return compareResult.misMatchPercentage;
     }
 }
 exports.ImageComparison = ImageComparison;

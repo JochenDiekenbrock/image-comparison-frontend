@@ -1,17 +1,20 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 import { ImageComparison } from '../';
 
 describe('angularjs homepage todo list', () => {
     it('should add a todo', async () => {
-        browser.get('https://angularjs.org');
+        await browser.get('https://angularjs.org');
 
-        const imageComparison = new ImageComparison();
-        await imageComparison.checkPage('startPage');
+        const imageComparison = new ImageComparison({ reportPath: browser.params.reportPath });
 
-        element(by.model('todoList.todoText')).sendKeys('write first protractor test');
+        // await browser.executeScript('window.scrollTo(0,0);');
+        const input = element(by.model('todoList.todoText'));
+        input.sendKeys('write first protractor test');
         element(by.css('[value="add"]')).click();
 
-        await imageComparison.checkElement(element(by.model('todoList.todoText')), 'anElement after adding');
+        await imageComparison.checkElement(input, 'anElement after adding');
+
+        await imageComparison.checkPage('startPage');
     });
 });
