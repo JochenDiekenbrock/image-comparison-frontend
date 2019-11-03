@@ -1,3 +1,11 @@
+## 3.1.0 (2019-11-03)
+
+* add hint to set returnAllCompareData ([cb11dd9](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/cb11dd9))
+* autoformat ([7a468dd](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/7a468dd))
+* Bump lodash from 4.17.11 to 4.17.15 ([f5713cf](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/f5713cf))
+
+
+
 ## 3.0.0 (2019-06-11)
 
 * typos ([136b1fc](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/136b1fc))
