@@ -2,7 +2,7 @@
     "baselineImage": "./baseline/start-page-chrome-1050x880-dpr-1.png",
     "actualImage": "./actual/start-page-chrome-1050x880-dpr-1.png",
     "success": true,
-    "date": "2019-06-11T14:23:36.014Z",
+    "date": "2020-01-19T13:04:40.921Z",
     "testName": "startPage",
     "testFileName": "start-page"
 }
