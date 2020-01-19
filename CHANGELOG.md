@@ -1,3 +1,14 @@
+## 3.2.0 (2020-01-19)
+
+* Bump handlebars from 4.1.2 to 4.5.3 ([2bdb0e1](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/2bdb0e1))
+* Bump lodash.template from 4.4.0 to 4.5.0 ([974e8ae](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/974e8ae))
+* fix example test ([32b842a](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/32b842a))
+* format and lint fixes ([8c0ee59](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/8c0ee59))
+* update dependencies ([4e6459f](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/4e6459f))
+* update test data ([fc690b1](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/fc690b1))
+
+
+
 ## 3.1.0 (2019-11-03)
 
 * add hint to set returnAllCompareData ([cb11dd9](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/cb11dd9))
