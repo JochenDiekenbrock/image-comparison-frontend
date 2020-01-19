@@ -9,7 +9,7 @@ describe('angularjs homepage todo list', () => {
         // await browser.executeScript('window.scrollTo(0,0);');
         const input = protractor_1.element(protractor_1.by.model('todoList.todoText'));
         input.sendKeys('write first protractor test');
-        protractor_1.element(protractor_1.by.css('[value="add"]')).click();
+        await protractor_1.element(protractor_1.by.css('[value="add"]')).click();
         await imageComparison.checkElement(input, 'anElement after adding');
         await imageComparison.checkPage('startPage');
     });
