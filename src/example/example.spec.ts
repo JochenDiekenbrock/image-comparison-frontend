@@ -1,4 +1,4 @@
-import { browser, by, element, ElementFinder } from 'protractor';
+import { browser, by, element} from 'protractor';
 
 import { ImageComparison } from '../';
 
@@ -11,7 +11,7 @@ describe('angularjs homepage todo list', () => {
         // await browser.executeScript('window.scrollTo(0,0);');
         const input = element(by.model('todoList.todoText'));
         input.sendKeys('write first protractor test');
-        element(by.css('[value="add"]')).click();
+        await element(by.css('[value="add"]')).click();
 
         await imageComparison.checkElement(input, 'anElement after adding');
 
