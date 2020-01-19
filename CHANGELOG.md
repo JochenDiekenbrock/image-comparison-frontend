@@ -1,3 +1,8 @@
+## 3.3.0 (2020-01-19)
+
+
+
+
 ## 3.2.0 (2020-01-19)
 
 * Bump handlebars from 4.1.2 to 4.5.3 ([2bdb0e1](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/2bdb0e1))
