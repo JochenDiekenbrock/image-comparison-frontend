@@ -1,3 +1,10 @@
+## 3.4.0 (2020-01-30)
+
+* format and lint fixes ([77a9470](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/77a9470))
+* update dependencies ([70dadde](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/70dadde))
+
+
+
 ## 3.3.0 (2020-01-19)
 
 
