@@ -15,18 +15,18 @@
     "author": "Jochen Diekenbrock",
     "license": "GPL-3.0-or-later",
     "devDependencies": {
-        "@types/dashify": "^1.0.0",
+        "@types/dashify": "1.0.0",
         "@types/jasminewd2": "2.0.8",
-        "@types/node": "13.1.8",
+        "@types/node": "13.5.2",
         "conventional-changelog-cli": "2.0.31",
         "jasmine": "3.5.0",
         "prettier": "1.19.1",
         "tslint": "5.20.1",
-        "typescript": "3.6.4"
+        "typescript": "3.7.5"
     },
     "dependencies": {
-        "dashify": "^2.0.0",
-        "protractor": "5.4.2",
+        "dashify": "2.0.0",
+        "protractor": "5.4.3",
         "protractor-image-comparison": "3.9.0"
     },
     "scripts": {
