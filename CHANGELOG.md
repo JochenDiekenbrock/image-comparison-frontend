@@ -1,3 +1,15 @@
+## <small>3.4.2 (2020-07-17)</small>
+
+
+
+
+## <small>3.4.1 (2020-07-17)</small>
+
+* Bump lodash from 4.17.15 to 4.17.19 ([fd33a6f](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/fd33a6f))
+* update dependencies ([5493509](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/5493509))
+
+
+
 ## 3.4.0 (2020-01-30)
 
 * format and lint fixes ([77a9470](https://github.com/JochenDiekenbrock/image-comparison-frontend/commit/77a9470))

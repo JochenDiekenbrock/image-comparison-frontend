@@ -1,6 +1,6 @@
 {
     "name": "image-comparison-frontend",
-    "version": "3.4.0",
+    "version": "3.4.2",
     "description": "Frontend of an image comparison solution. Performs image comparisons during end to end tests and writes test results",
     "main": "dist/index.js",
     "types": "./dist/index.d.ts",
